@@ -1,0 +1,5 @@
+{
+    "root": "\\\\zgdata.ucsd.edu\\d_sarafian",
+    "datasets": "\\\\zgdata.ucsd.edu\\d_sarafian\\datasets",
+    "experiments": "\\\\zgdata.ucsd.edu\\d_sarafian\\zooplankton-pytorch\\experiments"
+}
