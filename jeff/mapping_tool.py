@@ -5,9 +5,11 @@ import dash_bootstrap_components as dbc
 
 from dash.dependencies import Input, Output, State, MATCH
 from dash import html, dcc
-from appsrc import app, config
+from app import app, config
 
-from components.mappingcomponents import create_ds_type_dd, create_do_sort_dd, create_maxsize_in, create_ds_dd, create_class_dd, create_grid, create_images, default_dd
+from jeff.components.mappingcomponents import (create_ds_type_dd, create_do_sort_dd, create_maxsize_in,
+                                               create_ds_dd, create_class_dd, create_slider, create_images, default_dd, create_max_width,
+                                               create_group_size_in)
 
 # required to allow callbacks for non-existent ID's
 app.config.suppress_callback_exceptions = True
@@ -59,7 +61,15 @@ def create_mega_column(idx):
     ds_do_sort_label = f"Sort by Height:"
     ds_do_sort_id = {"type": "do_sort", "index": idx}
 
-    grid_id = {"type": "grid", "index": idx}  # id for the grid
+    # grid_id = {"type": "grid", "index": idx}  # id for the grid
+
+    slider_wrapper_id = {"type": "slider_wrapper", "index": idx}
+    images_id = {"type": "images", "index": idx}
+
+    max_width_label = f"Max Width (% of column width): "
+
+    group_size_label = f"Page Size: "
+    group_size_id = {"type": "group_size", "index": idx}
 
     return dbc.Col(width=4, className="border border-success", children=[
         dbc.Row(children=[
@@ -78,6 +88,16 @@ def create_mega_column(idx):
         ]),
         dbc.Row(children=[
             dbc.Col(width=6, children=[
+                html.P(children=max_width_label),
+                create_max_width(int(idx))
+            ]),
+            dbc.Col(width=6, children=[
+                html.P(children=group_size_label),
+                create_group_size_in(group_size_id)
+            ])
+        ]),
+        dbc.Row(children=[
+            dbc.Col(width=6, children=[
                 html.P(children=ds_sel_label),
                 html.Div(id=ds_sel_wrapper_id, children=[
                     default_dd({"type": "ds_select", "index": int(idx)})
@@ -90,11 +110,13 @@ def create_mega_column(idx):
                 ]),
             ]),
         ]),
-        html.Div(id=grid_id)
+        html.Div(id=slider_wrapper_id,
+                 children=create_slider(idx, None, None, None, None)),
+        html.Div(id=images_id)
     ])
 
 
-app.layout = html.Div(children=[
+layout = html.Div(children=[
     dbc.Container(fluid=True, children=[
         html.H3(children=f"Static File Serving Directory (Hard Coded):"),
         html.P(children=image_directory),
@@ -128,27 +150,29 @@ def callback_ds_chosen(ds, idx):
 
 
 @app.callback(
-    Output({"type": "grid", "index": MATCH}, "children"),
+    Output({"type": "slider_wrapper", "index": MATCH}, "children"),
     Input({"type": "ds_select", "index": MATCH}, "value"),
     Input({"type": "class", "index": MATCH}, "value"),
     Input({"type": "ds_size", "index": MATCH}, "value"),
+    Input({"type": "group_size", "index": MATCH}, "value"),
     State({"type": "dummy", "index": MATCH}, "children")
 )
-def refresh_grid(ds, classs, size, idx):
-    return create_grid(idx, ds, classs, size)
+def refresh_slider(ds, classs, size, ct_per, idx):
+    return create_slider(idx, ds, classs, ct_per, size)
 
 
 @app.callback(
     Output({"type": "images", "index": MATCH}, "children"),
     Input({"type": "do_sort", "index": MATCH}, "value"),
     Input({"type": "slider", "index": MATCH}, "value"),
-    Input({"type": "grid", "index": MATCH}, "children"),
-    State({"type": "ds_select", "index": MATCH}, "value"),
-    State({"type": "class", "index": MATCH}, "value"),
+    Input({"type": "ds_select", "index": MATCH}, "value"),
+    Input({"type": "class", "index": MATCH}, "value"),
+    Input({"type": "max_width", "index": MATCH}, "value"),
+    Input({"type": "group_size", "index": MATCH}, "value"),
     State({"type": "dummy", "index": MATCH}, "children")
 )
-def refresh_images(do_sort, page, _, ds, classs, idx):
-    return create_images(idx, ds, classs, page, do_sort)
+def refresh_images(do_sort, page, ds, classs, width, _, idx):
+    return create_images(idx, ds, classs, page, do_sort, width)
 
 
 if __name__ == "__main__":

@@ -2,22 +2,7 @@ from dash import dcc
 from utils.path_utils import has_classification
 import os
 
-from appsrc import config
-
-
-# def dataset_dropdown(path):
-#     try:
-#         return dcc.Dropdown(
-#             id="dataset_dropdown",
-#             options=[{"label": "None", "value": "_"}] + [{"label": f, "value": os.path.join(
-#                 path, "datasets", f)} for f in os.listdir(os.path.join(path, "datasets")) if os.path.isdir(os.path.join(path, "datasets", f))],
-#             value="_"
-#         )
-#     except:
-#         return dcc.Dropdown(
-#             id="ds",
-#             disabled=True
-#         )
+from app import config
 
 
 def experiment_dropdown(id):
