@@ -3,12 +3,22 @@ import sklearn
 import pandas as pd
 from sklearn.metrics import confusion_matrix
 from collections import defaultdict
-
+import numpy as np
 
 def create_confusion_mat(df):
     true, pred = df["Ground Truth"], df["Prediction"]
-    return confusion_matrix(true, pred), sorted(df["Ground Truth"].unique())
+    mat = confusion_matrix(true, pred)
+    rowsum, colsum, diag = np.sum(mat, axis=1), np.sum(mat, axis=0), np.diag(mat)
+    vert, horiz = np.nan_to_num(diag/rowsum), np.nan_to_num(diag/colsum)
+    return mat, sorted(df["Ground Truth"].unique()), vert, horiz
 
+def modify_mat(confu):
+    relevant = np.sum(confu, axis=1)
+    mat = confu / relevant.reshape((-1, 1))
+    diag = np.diag(mat)
+    mat = np.clip(-mat, -0.2, 1)
+    np.fill_diagonal(mat, diag)
+    return mat
 
 def make_dicts(df):
     index = []

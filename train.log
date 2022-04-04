@@ -1,0 +1,307 @@
+2022-03-25 22:19:11,687:INFO: Starting trial 'trial_1' for 'convnextTiny_convnext_03_25'
+2022-03-25 22:19:11,688:INFO: Reading dataset metadata from experiments/convnextTiny_convnext_03_25/trial_1/deployment_metadata/dataset.csv
+2022-03-25 22:19:12,236:INFO: Image normalization: 'Normalize(mean=[0.9850790616518345, 0.9850790616518345, 0.9850790616518345], std=[0.10844256129585952, 0.10844256129585952, 0.10844256129585952])'
+2022-03-25 22:19:12,236:INFO: Loading image dataset from '../datasets/UVP5_processed_sep_2021/'
+2022-03-25 22:19:12,937:INFO: Creating dataloaders
+2022-03-25 22:19:14,711:INFO: Initializing model
+2022-03-25 22:19:15,607:INFO: ----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [64, 96, 32, 32]           4,704
+         LayerNorm-2           [64, 96, 32, 32]             192
+            Conv2d-3           [64, 96, 32, 32]           4,800
+         LayerNorm-4           [64, 32, 32, 96]             192
+            Linear-5          [64, 32, 32, 384]          37,248
+              GELU-6          [64, 32, 32, 384]               0
+            Linear-7           [64, 32, 32, 96]          36,960
+          Identity-8           [64, 96, 32, 32]               0
+             Block-9           [64, 96, 32, 32]               0
+           Conv2d-10           [64, 96, 32, 32]           4,800
+        LayerNorm-11           [64, 32, 32, 96]             192
+           Linear-12          [64, 32, 32, 384]          37,248
+             GELU-13          [64, 32, 32, 384]               0
+           Linear-14           [64, 32, 32, 96]          36,960
+         Identity-15           [64, 96, 32, 32]               0
+            Block-16           [64, 96, 32, 32]               0
+           Conv2d-17           [64, 96, 32, 32]           4,800
+        LayerNorm-18           [64, 32, 32, 96]             192
+           Linear-19          [64, 32, 32, 384]          37,248
+             GELU-20          [64, 32, 32, 384]               0
+           Linear-21           [64, 32, 32, 96]          36,960
+         Identity-22           [64, 96, 32, 32]               0
+            Block-23           [64, 96, 32, 32]               0
+        LayerNorm-24           [64, 96, 32, 32]             192
+           Conv2d-25          [64, 192, 16, 16]          73,920
+           Conv2d-26          [64, 192, 16, 16]           9,600
+        LayerNorm-27          [64, 16, 16, 192]             384
+           Linear-28          [64, 16, 16, 768]         148,224
+             GELU-29          [64, 16, 16, 768]               0
+           Linear-30          [64, 16, 16, 192]         147,648
+         Identity-31          [64, 192, 16, 16]               0
+            Block-32          [64, 192, 16, 16]               0
+           Conv2d-33          [64, 192, 16, 16]           9,600
+        LayerNorm-34          [64, 16, 16, 192]             384
+           Linear-35          [64, 16, 16, 768]         148,224
+             GELU-36          [64, 16, 16, 768]               0
+           Linear-37          [64, 16, 16, 192]         147,648
+         Identity-38          [64, 192, 16, 16]               0
+            Block-39          [64, 192, 16, 16]               0
+           Conv2d-40          [64, 192, 16, 16]           9,600
+        LayerNorm-41          [64, 16, 16, 192]             384
+           Linear-42          [64, 16, 16, 768]         148,224
+             GELU-43          [64, 16, 16, 768]               0
+           Linear-44          [64, 16, 16, 192]         147,648
+         Identity-45          [64, 192, 16, 16]               0
+            Block-46          [64, 192, 16, 16]               0
+        LayerNorm-47          [64, 192, 16, 16]             384
+           Conv2d-48            [64, 384, 8, 8]         295,296
+           Conv2d-49            [64, 384, 8, 8]          19,200
+        LayerNorm-50            [64, 8, 8, 384]             768
+           Linear-51           [64, 8, 8, 1536]         591,360
+             GELU-52           [64, 8, 8, 1536]               0
+           Linear-53            [64, 8, 8, 384]         590,208
+         Identity-54            [64, 384, 8, 8]               0
+            Block-55            [64, 384, 8, 8]               0
+           Conv2d-56            [64, 384, 8, 8]          19,200
+        LayerNorm-57            [64, 8, 8, 384]             768
+           Linear-58           [64, 8, 8, 1536]         591,360
+             GELU-59           [64, 8, 8, 1536]               0
+           Linear-60            [64, 8, 8, 384]         590,208
+         Identity-61            [64, 384, 8, 8]               0
+            Block-62            [64, 384, 8, 8]               0
+           Conv2d-63            [64, 384, 8, 8]          19,200
+        LayerNorm-64            [64, 8, 8, 384]             768
+           Linear-65           [64, 8, 8, 1536]         591,360
+             GELU-66           [64, 8, 8, 1536]               0
+           Linear-67            [64, 8, 8, 384]         590,208
+         Identity-68            [64, 384, 8, 8]               0
+            Block-69            [64, 384, 8, 8]               0
+           Conv2d-70            [64, 384, 8, 8]          19,200
+        LayerNorm-71            [64, 8, 8, 384]             768
+           Linear-72           [64, 8, 8, 1536]         591,360
+             GELU-73           [64, 8, 8, 1536]               0
+           Linear-74            [64, 8, 8, 384]         590,208
+         Identity-75            [64, 384, 8, 8]               0
+            Block-76            [64, 384, 8, 8]               0
+           Conv2d-77            [64, 384, 8, 8]          19,200
+        LayerNorm-78            [64, 8, 8, 384]             768
+           Linear-79           [64, 8, 8, 1536]         591,360
+             GELU-80           [64, 8, 8, 1536]               0
+           Linear-81            [64, 8, 8, 384]         590,208
+         Identity-82            [64, 384, 8, 8]               0
+            Block-83            [64, 384, 8, 8]               0
+           Conv2d-84            [64, 384, 8, 8]          19,200
+        LayerNorm-85            [64, 8, 8, 384]             768
+           Linear-86           [64, 8, 8, 1536]         591,360
+             GELU-87           [64, 8, 8, 1536]               0
+           Linear-88            [64, 8, 8, 384]         590,208
+         Identity-89            [64, 384, 8, 8]               0
+            Block-90            [64, 384, 8, 8]               0
+           Conv2d-91            [64, 384, 8, 8]          19,200
+        LayerNorm-92            [64, 8, 8, 384]             768
+           Linear-93           [64, 8, 8, 1536]         591,360
+             GELU-94           [64, 8, 8, 1536]               0
+           Linear-95            [64, 8, 8, 384]         590,208
+         Identity-96            [64, 384, 8, 8]               0
+            Block-97            [64, 384, 8, 8]               0
+           Conv2d-98            [64, 384, 8, 8]          19,200
+        LayerNorm-99            [64, 8, 8, 384]             768
+          Linear-100           [64, 8, 8, 1536]         591,360
+            GELU-101           [64, 8, 8, 1536]               0
+          Linear-102            [64, 8, 8, 384]         590,208
+        Identity-103            [64, 384, 8, 8]               0
+           Block-104            [64, 384, 8, 8]               0
+          Conv2d-105            [64, 384, 8, 8]          19,200
+       LayerNorm-106            [64, 8, 8, 384]             768
+          Linear-107           [64, 8, 8, 1536]         591,360
+            GELU-108           [64, 8, 8, 1536]               0
+          Linear-109            [64, 8, 8, 384]         590,208
+        Identity-110            [64, 384, 8, 8]               0
+           Block-111            [64, 384, 8, 8]               0
+       LayerNorm-112            [64, 384, 8, 8]             768
+          Conv2d-113            [64, 768, 4, 4]       1,180,416
+          Conv2d-114            [64, 768, 4, 4]          38,400
+       LayerNorm-115            [64, 4, 4, 768]           1,536
+          Linear-116           [64, 4, 4, 3072]       2,362,368
+            GELU-117           [64, 4, 4, 3072]               0
+          Linear-118            [64, 4, 4, 768]       2,360,064
+        Identity-119            [64, 768, 4, 4]               0
+           Block-120            [64, 768, 4, 4]               0
+          Conv2d-121            [64, 768, 4, 4]          38,400
+       LayerNorm-122            [64, 4, 4, 768]           1,536
+          Linear-123           [64, 4, 4, 3072]       2,362,368
+            GELU-124           [64, 4, 4, 3072]               0
+          Linear-125            [64, 4, 4, 768]       2,360,064
+        Identity-126            [64, 768, 4, 4]               0
+           Block-127            [64, 768, 4, 4]               0
+          Conv2d-128            [64, 768, 4, 4]          38,400
+       LayerNorm-129            [64, 4, 4, 768]           1,536
+          Linear-130           [64, 4, 4, 3072]       2,362,368
+            GELU-131           [64, 4, 4, 3072]               0
+          Linear-132            [64, 4, 4, 768]       2,360,064
+        Identity-133            [64, 768, 4, 4]               0
+           Block-134            [64, 768, 4, 4]               0
+       LayerNorm-135                  [64, 768]           1,536
+          Linear-136                  [64, 256]         196,864
+            ReLU-137                  [64, 256]               0
+         Dropout-138                  [64, 256]               0
+          Linear-139                   [64, 42]          10,794
+        ConvNeXt-140                   [64, 42]               0
+    convnextTiny-141                   [64, 42]               0
+================================================================
+Total params: 28,021,162
+Trainable params: 28,021,162
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 1020.00
+Forward/backward pass size (MB): 4668.81
+Params size (MB): 106.89
+Estimated Total Size (MB): 5795.70
+----------------------------------------------------------------
+
+2022-03-25 22:19:15,607:INFO: ************ Training ************
+2022-03-25 22:19:15,627:INFO: Training trial 'trial_1' of model 'convnextTiny_convnext_03_25', starting at epoch 0
+2022-03-25 23:28:51,432:INFO: Total time used: 01:09:35 Epoch 0 time used: 01:09:35 train loss: 1.3033 val loss: 0.7967
+Finished 1 epochs of training
+2022-03-26 00:38:14,370:INFO: Total time used: 02:18:58 Epoch 1 time used: 01:09:12 train loss: 0.8040 val loss: 0.6592
+Finished 2 epochs of training
+2022-03-26 00:38:23,478:INFO: Validation loss decreased (0.7967 --> 0.6592).
+2022-03-26 01:50:31,598:INFO: Total time used: 03:31:15 Epoch 2 time used: 01:12:07 train loss: 0.6982 val loss: 0.5846
+Finished 3 epochs of training
+2022-03-26 01:50:40,988:INFO: Validation loss decreased (0.6592 --> 0.5846).
+2022-03-26 03:01:04,308:INFO: Total time used: 04:41:48 Epoch 3 time used: 01:10:23 train loss: 0.6375 val loss: 0.5496
+Finished 4 epochs of training
+2022-03-26 03:01:14,377:INFO: Validation loss decreased (0.5846 --> 0.5496).
+2022-03-26 04:13:12,689:INFO: Total time used: 05:53:57 Epoch 4 time used: 01:11:57 train loss: 0.5930 val loss: 0.5142
+Finished 5 epochs of training
+2022-03-26 04:13:22,206:INFO: Validation loss decreased (0.5496 --> 0.5142).
+2022-03-26 05:21:44,781:INFO: Total time used: 07:02:29 Epoch 5 time used: 01:08:22 train loss: 0.5592 val loss: 0.4956
+Finished 6 epochs of training
+2022-03-26 05:21:53,522:INFO: Validation loss decreased (0.5142 --> 0.4956).
+2022-03-26 06:30:17,116:INFO: Total time used: 08:11:01 Epoch 6 time used: 01:08:23 train loss: 0.5375 val loss: 0.4784
+Finished 7 epochs of training
+2022-03-26 06:30:25,951:INFO: Validation loss decreased (0.4956 --> 0.4784).
+2022-03-26 07:40:38,748:INFO: Total time used: 09:21:23 Epoch 7 time used: 01:10:12 train loss: 0.5139 val loss: 0.4614
+Finished 8 epochs of training
+2022-03-26 07:40:47,826:INFO: Validation loss decreased (0.4784 --> 0.4614).
+2022-03-26 08:49:47,687:INFO: Total time used: 10:30:32 Epoch 8 time used: 01:08:59 train loss: 0.4977 val loss: 0.4503
+Finished 9 epochs of training
+2022-03-26 08:49:56,694:INFO: Validation loss decreased (0.4614 --> 0.4503).
+2022-03-26 09:57:47,525:INFO: Total time used: 11:38:31 Epoch 9 time used: 01:07:50 train loss: 0.4852 val loss: 0.4491
+Finished 10 epochs of training
+2022-03-26 09:57:56,585:INFO: Validation loss decreased (0.4503 --> 0.4491).
+2022-03-26 11:05:26,896:INFO: Total time used: 12:46:11 Epoch 10 time used: 01:07:30 train loss: 0.4741 val loss: 0.4438
+Finished 11 epochs of training
+2022-03-26 11:05:35,679:INFO: Validation loss decreased (0.4491 --> 0.4438).
+2022-03-26 12:14:22,302:INFO: Total time used: 13:55:06 Epoch 11 time used: 01:08:46 train loss: 0.4602 val loss: 0.4376
+Finished 12 epochs of training
+2022-03-26 12:14:31,248:INFO: Validation loss decreased (0.4438 --> 0.4376).
+2022-03-26 13:23:57,431:INFO: Total time used: 15:04:41 Epoch 12 time used: 01:09:25 train loss: 0.4487 val loss: 0.4323
+Finished 13 epochs of training
+2022-03-26 13:24:06,314:INFO: Validation loss decreased (0.4376 --> 0.4323).
+2022-03-26 14:32:10,298:INFO: Total time used: 16:12:54 Epoch 13 time used: 01:08:03 train loss: 0.4396 val loss: 0.4229
+Finished 14 epochs of training
+2022-03-26 14:32:19,272:INFO: Validation loss decreased (0.4323 --> 0.4229).
+2022-03-26 15:39:10,080:INFO: Total time used: 17:19:54 Epoch 14 time used: 01:06:50 train loss: 0.4294 val loss: 0.4252
+Finished 15 epochs of training
+2022-03-26 15:39:17,890:INFO: Validation loss did not sufficiently decrease from 0.4229. Early stopping count: 1 / 10
+2022-03-26 16:47:00,874:INFO: Total time used: 18:27:45 Epoch 15 time used: 01:07:42 train loss: 0.4239 val loss: 0.4200
+Finished 16 epochs of training
+2022-03-26 16:47:09,793:INFO: Validation loss decreased (0.4229 --> 0.4200).
+2022-03-26 17:56:20,032:INFO: Total time used: 19:37:04 Epoch 16 time used: 01:09:09 train loss: 0.4148 val loss: 0.4150
+Finished 17 epochs of training
+2022-03-26 17:56:28,833:INFO: Validation loss decreased (0.4200 --> 0.4150).
+2022-03-26 19:05:53,823:INFO: Total time used: 20:46:38 Epoch 17 time used: 01:09:24 train loss: 0.4097 val loss: 0.4131
+Finished 18 epochs of training
+2022-03-26 19:06:02,679:INFO: Validation loss decreased (0.4150 --> 0.4131).
+2022-03-26 20:14:57,422:INFO: Total time used: 21:55:41 Epoch 18 time used: 01:08:54 train loss: 0.4036 val loss: 0.4088
+Finished 19 epochs of training
+2022-03-26 20:15:06,430:INFO: Validation loss decreased (0.4131 --> 0.4088).
+2022-03-26 21:23:43,630:INFO: Total time used: 23:04:28 Epoch 19 time used: 01:08:36 train loss: 0.3951 val loss: 0.3999
+Finished 20 epochs of training
+2022-03-26 21:23:52,593:INFO: Validation loss decreased (0.4088 --> 0.3999).
+2022-03-26 22:31:44,531:INFO: Total time used: 24:12:28 Epoch 20 time used: 01:07:51 train loss: 0.3885 val loss: 0.4097
+Finished 21 epochs of training
+2022-03-26 22:31:52,495:INFO: Validation loss did not sufficiently decrease from 0.3999. Early stopping count: 1 / 10
+2022-03-26 23:41:23,564:INFO: Total time used: 25:22:07 Epoch 21 time used: 01:09:30 train loss: 0.3815 val loss: 0.4065
+Finished 22 epochs of training
+2022-03-26 23:41:31,328:INFO: Validation loss did not sufficiently decrease from 0.3999. Early stopping count: 2 / 10
+2022-03-27 00:50:35,074:INFO: Total time used: 26:31:19 Epoch 22 time used: 01:09:03 train loss: 0.3767 val loss: 0.4050
+Finished 23 epochs of training
+2022-03-27 00:50:42,929:INFO: Validation loss did not sufficiently decrease from 0.3999. Early stopping count: 3 / 10
+2022-03-27 01:58:47,301:INFO: Total time used: 27:39:31 Epoch 23 time used: 01:08:04 train loss: 0.3720 val loss: 0.4086
+Finished 24 epochs of training
+2022-03-27 01:58:55,013:INFO: Validation loss did not sufficiently decrease from 0.3999. Early stopping count: 4 / 10
+2022-03-27 03:07:20,277:INFO: Total time used: 28:48:04 Epoch 24 time used: 01:08:25 train loss: 0.3630 val loss: 0.4055
+Finished 25 epochs of training
+2022-03-27 03:07:27,952:INFO: Validation loss did not sufficiently decrease from 0.3999. Early stopping count: 5 / 10
+2022-03-27 04:15:37,743:INFO: Total time used: 29:56:22 Epoch 25 time used: 01:08:09 train loss: 0.3583 val loss: 0.4067
+Finished 26 epochs of training
+2022-03-27 04:15:45,421:INFO: Validation loss did not sufficiently decrease from 0.3999. Early stopping count: 6 / 10
+2022-03-27 05:25:38,690:INFO: Total time used: 31:06:23 Epoch 26 time used: 01:09:53 train loss: 0.3554 val loss: 0.4005
+Finished 27 epochs of training
+2022-03-27 05:25:46,428:INFO: Validation loss did not sufficiently decrease from 0.3999. Early stopping count: 7 / 10
+2022-03-27 06:35:20,543:INFO: Total time used: 32:16:04 Epoch 27 time used: 01:09:33 train loss: 0.3507 val loss: 0.4017
+Finished 28 epochs of training
+2022-03-27 06:35:28,298:INFO: Validation loss did not sufficiently decrease from 0.3999. Early stopping count: 8 / 10
+2022-03-27 07:44:41,708:INFO: Total time used: 33:25:26 Epoch 28 time used: 01:09:13 train loss: 0.3434 val loss: 0.3972
+Finished 29 epochs of training
+2022-03-27 07:44:50,527:INFO: Validation loss decreased (0.3999 --> 0.3972).
+2022-03-27 08:54:01,612:INFO: Total time used: 34:34:45 Epoch 29 time used: 01:09:10 train loss: 0.3356 val loss: 0.3954
+Finished 30 epochs of training
+2022-03-27 08:54:11,878:INFO: Validation loss decreased (0.3972 --> 0.3954).
+2022-03-27 10:03:32,430:INFO: Total time used: 35:44:16 Epoch 30 time used: 01:09:20 train loss: 0.3349 val loss: 0.4069
+Finished 31 epochs of training
+2022-03-27 10:03:40,109:INFO: Validation loss did not sufficiently decrease from 0.3954. Early stopping count: 1 / 10
+2022-03-27 11:14:37,246:INFO: Total time used: 36:55:21 Epoch 31 time used: 01:10:56 train loss: 0.3300 val loss: 0.4036
+Finished 32 epochs of training
+2022-03-27 11:14:45,083:INFO: Validation loss did not sufficiently decrease from 0.3954. Early stopping count: 2 / 10
+2022-03-27 12:25:37,820:INFO: Total time used: 38:06:22 Epoch 32 time used: 01:10:52 train loss: 0.3243 val loss: 0.4074
+Finished 33 epochs of training
+2022-03-27 12:25:45,635:INFO: Validation loss did not sufficiently decrease from 0.3954. Early stopping count: 3 / 10
+2022-03-27 13:35:29,462:INFO: Total time used: 39:16:13 Epoch 33 time used: 01:09:43 train loss: 0.3179 val loss: 0.4089
+Finished 34 epochs of training
+2022-03-27 13:35:37,249:INFO: Validation loss did not sufficiently decrease from 0.3954. Early stopping count: 4 / 10
+2022-03-27 14:44:36,244:INFO: Total time used: 40:25:20 Epoch 34 time used: 01:08:58 train loss: 0.3162 val loss: 0.4007
+Finished 35 epochs of training
+2022-03-27 14:44:44,061:INFO: Validation loss did not sufficiently decrease from 0.3954. Early stopping count: 5 / 10
+2022-03-27 15:53:35,414:INFO: Total time used: 41:34:19 Epoch 35 time used: 01:08:51 train loss: 0.3113 val loss: 0.4103
+Finished 36 epochs of training
+2022-03-27 15:53:43,225:INFO: Validation loss did not sufficiently decrease from 0.3954. Early stopping count: 6 / 10
+2022-03-27 17:05:31,855:INFO: Total time used: 42:46:16 Epoch 36 time used: 01:11:48 train loss: 0.3047 val loss: 0.4068
+Finished 37 epochs of training
+2022-03-27 17:05:39,621:INFO: Validation loss did not sufficiently decrease from 0.3954. Early stopping count: 7 / 10
+2022-03-27 18:15:23,046:INFO: Total time used: 43:56:07 Epoch 37 time used: 01:09:43 train loss: 0.3019 val loss: 0.4122
+Finished 38 epochs of training
+2022-03-27 18:15:30,892:INFO: Validation loss did not sufficiently decrease from 0.3954. Early stopping count: 8 / 10
+2022-03-27 19:25:00,550:INFO: Total time used: 45:05:44 Epoch 38 time used: 01:09:29 train loss: 0.2971 val loss: 0.4134
+Finished 39 epochs of training
+2022-03-27 19:25:08,404:INFO: Validation loss did not sufficiently decrease from 0.3954. Early stopping count: 9 / 10
+2022-03-27 20:34:02,676:INFO: Total time used: 46:14:47 Epoch 39 time used: 01:08:54 train loss: 0.2928 val loss: 0.4169
+Finished 40 epochs of training
+2022-03-27 20:34:10,667:INFO: Validation loss did not sufficiently decrease from 0.3954. Early stopping count: 10 / 10
+2022-03-27 20:34:10,667:INFO: Validation has not improved over 10 epochs (including previous runs). Early stopping...
+2022-03-27 20:34:12,287:INFO: Model trained for 40 epochs
+2022-03-27 20:34:12,570:INFO: Best validation loss: 0.3954
+2022-03-27 20:34:12,570:INFO: ************ Testing ************
+2022-03-27 20:34:12,571:INFO: Testing trial 'trial_1' of model 'convnextTiny_convnext_03_25', trained for 30 epochs
+2022-03-27 20:35:42,676:INFO: Computing metrics on all test classes
+2022-03-27 20:35:42,702:INFO: Accuracy: 0.8766
+2022-03-27 20:35:42,741:INFO: Precision: 0.8745
+2022-03-27 20:35:42,741:INFO: Recall: 0.8766
+2022-03-27 20:35:42,741:INFO: F1-Score: 0.8742
+2022-03-27 20:35:43,100:INFO: ROC AUC Score: 0.9923
+2022-03-27 20:35:43,100:INFO: Computing metrics on all non-Snow test classes
+2022-03-27 20:35:43,168:INFO: Accuracy: 0.8828
+2022-03-27 20:35:43,187:INFO: Precision: 0.8983
+2022-03-27 20:35:43,187:INFO: Recall: 0.8828
+2022-03-27 20:35:43,187:INFO: F1-Score: 0.8890
+2022-03-27 20:35:43,290:INFO: Saving test results for 'all' (14543 images)...
+2022-03-27 20:35:43,291:INFO: Saving classification results
+2022-03-27 20:35:43,349:INFO: Generating confusion matrix
+2022-03-27 20:35:59,114:INFO: Saving test results for 'only_large' (4273 images)...
+2022-03-27 20:35:59,115:INFO: Saving classification results
+2022-03-27 20:35:59,139:INFO: Generating confusion matrix
+2022-03-27 20:36:13,503:INFO: Saving test results for 'only_small' (10270 images)...
+2022-03-27 20:36:13,504:INFO: Saving classification results
+2022-03-27 20:36:13,553:INFO: Generating confusion matrix
